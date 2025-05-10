@@ -3,7 +3,9 @@ package com.example.jamplayer.data.system.mediaStore
 import android.content.ContentResolver
 import android.content.ContentUris
 import android.net.Uri
+import android.provider.MediaStore
 import android.provider.MediaStore.Audio.Media
+import android.util.Log
 import com.example.jamplayer.data.dto.AudioMediaItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -64,9 +66,7 @@ class FetchAudioMedia @Inject constructor (
                     )
                     audioList.add(song)
                 }
-
             }
-
         }
         return audioList
     }

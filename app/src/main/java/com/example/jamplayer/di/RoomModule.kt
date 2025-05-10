@@ -1,13 +1,13 @@
 package com.example.jamplayer.di
 
 import android.content.Context
-import androidx.room.Database
+import androidx.media3.exoplayer.ExoPlayer
 import androidx.room.Room
 import com.example.jamplayer.data.local.roomdb.dao.AudioItemDao
 import com.example.jamplayer.data.local.roomdb.database.AudioItemDatabase
 import com.example.jamplayer.data.repo.AudioItemRepoImp
 import com.example.jamplayer.data.system.mediaStore.FetchAudioMedia
-import com.example.jamplayer.presentation.features.audio.allVideo.AllVideoViewModel
+import com.example.jamplayer.presentation.features.audio.allAudio.AllAudioViewModel
 import com.example.jamplayer.presentation.repo.AudioItemRepo
 import dagger.Module
 import dagger.Provides
@@ -44,7 +44,7 @@ class RoomModule {
 
     @Provides
     @Singleton
-    fun provideAllVideoViewModel(audioItemRepo: AudioItemRepo, fetchAudioMedia: FetchAudioMedia ) =
-        AllVideoViewModel(audioItemRepo, fetchAudioMedia)
+    fun provideAllVideoViewModel(audioItemRepo: AudioItemRepo, fetchAudioMedia: FetchAudioMedia, exoPlayer: ExoPlayer ) =
+        AllAudioViewModel(audioItemRepo, fetchAudioMedia, exoPlayer)
 
 }

@@ -87,6 +87,9 @@ dependencies {
 
     implementation ("com.github.bumptech.glide:compose:1.0.0-beta01")
 
+   implementation ("com.google.accompanist:accompanist-permissions:0.37.3")
+
+
 
 
 }
