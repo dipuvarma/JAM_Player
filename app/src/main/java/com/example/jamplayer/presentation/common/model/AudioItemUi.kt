@@ -8,5 +8,4 @@ data class AudioItemUi(
     val size: String = "",
     val album: String? = null,
     val artist: String? = null,
-    val thumbnail: String? = null,
 )

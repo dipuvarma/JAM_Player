@@ -16,9 +16,7 @@ fun AudioItem.toAudioItemUI(): AudioItemUi {
         data = data,
         duration = millisToMinutesSeconds(duration),
         size = formatSize(size),
-        album = album,
         artist = artist,
-        thumbnail = thumbnail
     )
 }
 

@@ -44,5 +44,12 @@ object DiModule {
     @Provides
     @Singleton
     fun provideAllVideoRepo(repo: VideoItemRepo) = AllVideoViewModel(repo)
+
+    @Provides
+    @Singleton
+    fun provideExoPlayerFactory(
+        @ApplicationContext context: Context,
+    ): ExoPlayerFactory = ExoPlayerFactory(context)
+
 }
 

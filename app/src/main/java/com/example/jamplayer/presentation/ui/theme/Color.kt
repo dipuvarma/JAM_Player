@@ -1,4 +1,4 @@
-package com.example.jamplayer.ui.theme
+package com.example.jamplayer.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

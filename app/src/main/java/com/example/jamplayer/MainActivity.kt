@@ -10,17 +10,15 @@ import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.example.jamplayer.ui.theme.JAMPlayerTheme
-import com.example.jamplayer.presentation.features.JamPlayerApp
+import com.example.jamplayer.presentation.ui.theme.JAMPlayerTheme
+import com.example.jamplayer.presentation.JamPlayerApp
+import com.example.jamplayer.presentation.MainPlayerScreen
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
-    @SuppressLint("CoroutineCreationDuringComposition")
-    @OptIn(ExperimentalPermissionsApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

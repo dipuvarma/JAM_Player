@@ -1,6 +1,5 @@
-package com.example.jamplayer.ui.theme
+package com.example.jamplayer.presentation.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

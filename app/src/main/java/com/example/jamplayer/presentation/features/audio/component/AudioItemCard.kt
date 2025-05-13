@@ -46,7 +46,6 @@ fun AudioItemCard(
 ) {
     Row(
         modifier = Modifier
-            .statusBarsPadding()
             .fillMaxWidth()
             .background(
                 color = MaterialTheme.colorScheme.surface,
@@ -56,7 +55,7 @@ fun AudioItemCard(
         horizontalArrangement = Arrangement.spacedBy(16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        AudioThumbnailCard(audioItemUi.thumbnail?.toUri() ?: "".toUri())
+        AudioThumbnailCard()
         Column(
             modifier = Modifier.fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(4.dp),
@@ -96,27 +95,7 @@ fun AudioItemCard(
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
-private fun AudioThumbnailCard(
-    uri: Uri,
-) {
-    val context = LocalContext.current
-
-    // Load bitmap only once per composition
-    val albumArtBitmap = remember(uri) {
-        try {
-            val retriever = MediaMetadataRetriever()
-            retriever.setDataSource(context, uri)
-            val art = retriever.embeddedPicture
-            retriever.release()
-
-            art?.let {
-                BitmapFactory.decodeByteArray(it, 0, it.size)
-            }
-        } catch (e: Exception) {
-            null
-        }
-    }
-
+private fun AudioThumbnailCard() {
     Box(
         modifier = Modifier
             .size(80.dp)
@@ -126,7 +105,7 @@ private fun AudioThumbnailCard(
             )
     ) {
         GlideImage(
-            model = albumArtBitmap ?: R.drawable.ic_launcher_background,
+            model = R.drawable.ic_launcher_background,
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier

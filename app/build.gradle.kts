@@ -89,7 +89,11 @@ dependencies {
 
    implementation ("com.google.accompanist:accompanist-permissions:0.37.3")
 
+    //for extended icon
+    implementation("androidx.compose.material:material-icons-extended-android:1.7.8")
 
+    implementation("com.google.android.exoplayer:exoplayer-ui:2.19.1")
+    implementation("com.google.android.exoplayer:exoplayer:2.19.1")
 
 
 }

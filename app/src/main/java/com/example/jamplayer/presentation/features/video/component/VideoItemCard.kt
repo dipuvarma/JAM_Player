@@ -37,7 +37,6 @@ fun VideoItemCard(
 ) {
     Row(
         modifier = Modifier
-            .statusBarsPadding()
             .fillMaxWidth()
             .background(
                 color = MaterialTheme.colorScheme.surface,

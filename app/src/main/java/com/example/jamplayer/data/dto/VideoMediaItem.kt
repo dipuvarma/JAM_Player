@@ -10,6 +10,5 @@ data class VideoMediaItem(
     val resolution: String?,
     val size: Long?,
     val dateAdded: Long?,
-
 )
 

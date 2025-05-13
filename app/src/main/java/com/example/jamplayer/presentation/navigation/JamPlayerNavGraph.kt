@@ -1,27 +1,39 @@
 package com.example.jamplayer.presentation.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
-import com.example.jamplayer.presentation.features.video.screen.allVideo.AllVideoScreen
+import com.example.jamplayer.presentation.MainPlayerScreen
+import com.example.jamplayer.presentation.features.audio.audioPlayer.AudioPlayerScreen
 import com.example.jamplayer.presentation.features.video.screen.videoPlayer.VideoPlayerScreen
+import com.example.jamplayer.presentation.navigation.Graph.AudioPlayer
+import com.example.jamplayer.presentation.navigation.Graph.MainPlayer
+import com.example.jamplayer.presentation.navigation.Graph.VideoPlayer
 
 @Composable
-fun JamPlayerNavGraph(modifier: Modifier = Modifier) {
+fun JamPlayerNavGraph() {
+    val rootNavController = rememberNavController()
+    val tabNavController = rememberNavController() // ✅ Hoisted here
 
-    val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = AllVideo){
+    NavHost(
+        navController = rootNavController,
+        startDestination = MainPlayer
+    ) {
 
-        composable<AllVideo> {
-            AllVideoScreen(
-                viewModel = hiltViewModel(),
-                navController = navController
+        composable<MainPlayer> {
+            MainPlayerScreen(
+                rootNavController = rootNavController,
+                tabNavController = tabNavController
             )
         }
+
+        composable<AudioPlayer> {
+            AudioPlayerScreen(viewModel = hiltViewModel())
+        }
+
         composable<VideoPlayer> {
             val arg = it.toRoute<VideoPlayer>()
             VideoPlayerScreen(
@@ -29,8 +41,5 @@ fun JamPlayerNavGraph(modifier: Modifier = Modifier) {
                 videoUri = arg.videoUri
             )
         }
-
-
     }
-
 }
