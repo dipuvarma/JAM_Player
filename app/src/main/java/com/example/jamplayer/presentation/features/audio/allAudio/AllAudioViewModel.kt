@@ -14,6 +14,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -28,6 +29,12 @@ class AllAudioViewModel @Inject constructor(
     val exoPlayer: ExoPlayer,
 ) : ViewModel() {
 
+    private val _hasBeenPlayed = MutableStateFlow(false)
+    val hasBeenPlayed: StateFlow<Boolean> = _hasBeenPlayed
+
+    fun markPlayed() {
+        _hasBeenPlayed.value = true
+    }
 
     private val _uiState = MutableStateFlow(AllAudioUiState())
     val uiState = _uiState.asStateFlow()

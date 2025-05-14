@@ -35,10 +35,9 @@ val bottomNavItemList = listOf(
         route = PlayerProfile
     ),
     BottomNavItem(
-        title = "Video",
+        title = "Setting",
         selectedIcon = Icons.Filled.Settings,
         unSelectedIcon = Icons.Outlined.Settings,
         route = PlayerSetting
     ),
-
-    )
+)

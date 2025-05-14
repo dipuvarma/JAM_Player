@@ -24,7 +24,8 @@ fun BottomBarNavigation(
         tonalElevation = 4.dp
     ) {
         items.forEach { item ->
-            val isSelected = currentDestination.value?.destination == item.route
+            val currentRoute  = currentDestination.value?.destination?.route
+            val isSelected = currentRoute == item.route
             NavigationBarItem(
                 selected = isSelected,
                 onClick = {
