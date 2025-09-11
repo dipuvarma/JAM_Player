@@ -86,7 +86,6 @@ dependencies {
     implementation ("androidx.media3:media3-session:1.6.1")
 
     implementation ("com.github.bumptech.glide:compose:1.0.0-beta01")
-
    implementation ("com.google.accompanist:accompanist-permissions:0.37.3")
 
     //for extended icon

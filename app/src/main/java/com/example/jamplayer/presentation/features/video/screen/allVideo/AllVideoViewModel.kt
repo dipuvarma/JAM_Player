@@ -3,7 +3,7 @@ package com.example.jamplayer.presentation.features.video.screen.allVideo
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.jamplayer.data.mapper.toVideoItemUi
-import com.example.jamplayer.presentation.repo.VideoItemRepo
+import com.example.jamplayer.data.repo.roomdb.video.VideoItemRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,7 +1,7 @@
 package com.example.jamplayer.data.mapper
 
-import com.example.jamplayer.data.dto.VideoMediaItem
-import com.example.jamplayer.data.local.roomdb.table.AudioItem
+import com.example.jamplayer.data.model.VideoMediaItem
+import com.example.jamplayer.data.datasource.local.roomdb.table.AudioItem
 import com.example.jamplayer.presentation.common.model.AudioItemUi
 import com.example.jamplayer.presentation.features.video.screen.allVideo.AllVideoItemUi
 import com.example.jamplayer.utils.formatDateFromTimestamp

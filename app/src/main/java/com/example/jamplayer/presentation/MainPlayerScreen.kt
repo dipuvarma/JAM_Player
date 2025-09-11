@@ -38,6 +38,7 @@ fun MainPlayerScreen(
     tabNavController: NavHostController,
     audioViewModel: AllAudioViewModel,
 ) {
+
     val hasBeenPlayed by audioViewModel.hasBeenPlayed.collectAsStateWithLifecycle()
     val state = audioViewModel.uiState.collectAsState()
     val audioList = state.value.allAudio
@@ -47,7 +48,6 @@ fun MainPlayerScreen(
 
     val currentBackStackEntry = tabNavController.currentBackStackEntryAsState()
     val currentDestination = currentBackStackEntry.value?.destination
-
 
     LaunchedEffect(isPlaying) {
         if (isPlaying) {

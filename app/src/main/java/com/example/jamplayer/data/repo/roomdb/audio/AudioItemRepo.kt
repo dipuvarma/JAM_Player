@@ -1,6 +1,6 @@
-package com.example.jamplayer.presentation.repo
+package com.example.jamplayer.data.repo.roomdb.audio
 
-import com.example.jamplayer.data.local.roomdb.table.AudioItem
+import com.example.jamplayer.data.datasource.local.roomdb.table.AudioItem
 import kotlinx.coroutines.flow.Flow
 
 interface AudioItemRepo {

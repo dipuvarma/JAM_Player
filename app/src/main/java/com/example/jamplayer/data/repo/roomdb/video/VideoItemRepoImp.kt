@@ -1,10 +1,8 @@
-package com.example.jamplayer.data.repo
+package com.example.jamplayer.data.repo.roomdb.video
 
-import com.example.jamplayer.data.dto.VideoMediaItem
-import com.example.jamplayer.data.system.mediaStore.FetchVideoMedia
-import com.example.jamplayer.presentation.repo.VideoItemRepo
+import com.example.jamplayer.data.model.VideoMediaItem
+import com.example.jamplayer.data.repo.mediaStore.video.FetchVideoMedia
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.catch
 import javax.inject.Inject
 
 class VideoItemRepoImp @Inject constructor(

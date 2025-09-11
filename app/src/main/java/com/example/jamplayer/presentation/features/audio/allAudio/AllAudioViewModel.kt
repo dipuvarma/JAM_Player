@@ -6,13 +6,12 @@ import androidx.lifecycle.viewModelScope
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
-import com.example.jamplayer.data.local.roomdb.table.AudioItem
+import com.example.jamplayer.data.datasource.local.roomdb.table.AudioItem
 import com.example.jamplayer.data.mapper.toAudioItemUI
-import com.example.jamplayer.data.system.mediaStore.FetchAudioMedia
-import com.example.jamplayer.presentation.repo.AudioItemRepo
+import com.example.jamplayer.data.repo.mediaStore.auido.FetchAudioMedia
+import com.example.jamplayer.data.repo.roomdb.audio.AudioItemRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

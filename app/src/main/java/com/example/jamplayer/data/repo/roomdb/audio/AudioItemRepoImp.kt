@@ -1,8 +1,7 @@
-package com.example.jamplayer.data.repo
+package com.example.jamplayer.data.repo.roomdb.audio
 
-import com.example.jamplayer.data.local.roomdb.dao.AudioItemDao
-import com.example.jamplayer.data.local.roomdb.table.AudioItem
-import com.example.jamplayer.presentation.repo.AudioItemRepo
+import com.example.jamplayer.data.datasource.local.roomdb.dao.AudioItemDao
+import com.example.jamplayer.data.datasource.local.roomdb.table.AudioItem
 import jakarta.inject.Inject
 import kotlinx.coroutines.flow.Flow
 

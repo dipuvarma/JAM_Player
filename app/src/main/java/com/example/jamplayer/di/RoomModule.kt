@@ -3,12 +3,12 @@ package com.example.jamplayer.di
 import android.content.Context
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.room.Room
-import com.example.jamplayer.data.local.roomdb.dao.AudioItemDao
-import com.example.jamplayer.data.local.roomdb.database.AudioItemDatabase
-import com.example.jamplayer.data.repo.AudioItemRepoImp
-import com.example.jamplayer.data.system.mediaStore.FetchAudioMedia
+import com.example.jamplayer.data.datasource.local.roomdb.dao.AudioItemDao
+import com.example.jamplayer.data.datasource.local.roomdb.database.AudioItemDatabase
+import com.example.jamplayer.data.repo.roomdb.audio.AudioItemRepoImp
+import com.example.jamplayer.data.repo.mediaStore.auido.FetchAudioMedia
 import com.example.jamplayer.presentation.features.audio.allAudio.AllAudioViewModel
-import com.example.jamplayer.presentation.repo.AudioItemRepo
+import com.example.jamplayer.data.repo.roomdb.audio.AudioItemRepo
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

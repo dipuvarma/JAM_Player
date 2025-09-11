@@ -2,11 +2,11 @@ package com.example.jamplayer.di
 
 import android.content.Context
 import androidx.media3.exoplayer.ExoPlayer
-import com.example.jamplayer.data.repo.VideoItemRepoImp
-import com.example.jamplayer.data.system.mediaStore.FetchAudioMedia
-import com.example.jamplayer.data.system.mediaStore.FetchVideoMedia
+import com.example.jamplayer.data.repo.roomdb.video.VideoItemRepoImp
+import com.example.jamplayer.data.repo.mediaStore.auido.FetchAudioMedia
+import com.example.jamplayer.data.repo.mediaStore.video.FetchVideoMedia
 import com.example.jamplayer.presentation.features.video.screen.allVideo.AllVideoViewModel
-import com.example.jamplayer.presentation.repo.VideoItemRepo
+import com.example.jamplayer.data.repo.roomdb.video.VideoItemRepo
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +17,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DiModule {
+object AppModule {
 
 
     @Provides

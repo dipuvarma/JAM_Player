@@ -1,4 +1,4 @@
-package com.example.jamplayer.data.dto
+package com.example.jamplayer.data.model
 
 import android.net.Uri
 

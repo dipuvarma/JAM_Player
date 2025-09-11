@@ -1,6 +1,5 @@
-package com.example.jamplayer.data.local.roomdb.table
+package com.example.jamplayer.data.datasource.local.roomdb.table
 
-import android.net.Uri
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 

@@ -1,19 +1,16 @@
-package com.example.jamplayer.data.system.mediaStore
+package com.example.jamplayer.data.repo.mediaStore.video
 
 import android.content.ContentResolver
 import android.content.ContentUris
-import android.net.Uri
 import android.os.Build
 import android.provider.MediaStore
-import android.util.Log
 import androidx.core.database.getLongOrNull
 import androidx.core.database.getStringOrNull
-import com.example.jamplayer.data.dto.VideoMediaItem
+import com.example.jamplayer.data.model.VideoMediaItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.withContext
 
 class FetchVideoMedia(private val contentResolver: ContentResolver) {
 

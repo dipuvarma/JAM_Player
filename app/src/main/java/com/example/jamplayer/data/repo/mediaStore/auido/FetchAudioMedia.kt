@@ -1,20 +1,16 @@
-package com.example.jamplayer.data.system.mediaStore
+package com.example.jamplayer.data.repo.mediaStore.auido
 
 import android.content.ContentResolver
 import android.content.ContentUris
 import android.net.Uri
 import android.os.Build
 import android.provider.MediaStore
-import android.provider.MediaStore.Audio.Media
-import android.util.Log
-import com.example.jamplayer.data.dto.AudioMediaItem
+import com.example.jamplayer.data.model.AudioMediaItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
-
 
 class FetchAudioMedia @Inject constructor(
     private val contentResolver: ContentResolver,
@@ -25,17 +21,17 @@ class FetchAudioMedia @Inject constructor(
         val audioList = mutableListOf<AudioMediaItem>()
 
         val collection = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            Media.getContentUri(MediaStore.VOLUME_EXTERNAL)
+            MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL)
         } else {
             MediaStore.Video.Media.EXTERNAL_CONTENT_URI
         }
 
         val projection = arrayOf(
-            Media._ID,
-            Media.DISPLAY_NAME,
-            Media.DURATION,
-            Media.SIZE,
-            Media.ARTIST,
+            MediaStore.Audio.Media._ID,
+            MediaStore.Audio.Media.DISPLAY_NAME,
+            MediaStore.Audio.Media.DURATION,
+            MediaStore.Audio.Media.SIZE,
+            MediaStore.Audio.Media.ARTIST,
         )
 
         contentResolver.query(
@@ -46,11 +42,11 @@ class FetchAudioMedia @Inject constructor(
             null
         )?.use { cursor ->
 
-            val idColumn = cursor.getColumnIndexOrThrow(Media._ID)
-            val titleColumn = cursor.getColumnIndexOrThrow(Media.DISPLAY_NAME)
-            val durationColumn = cursor.getColumnIndexOrThrow(Media.DURATION)
-            val sizeColumn = cursor.getColumnIndexOrThrow(Media.SIZE)
-            val artistColumn = cursor.getColumnIndexOrThrow(Media.ARTIST)
+            val idColumn = cursor.getColumnIndexOrThrow(MediaStore.Audio.Media._ID)
+            val titleColumn = cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DISPLAY_NAME)
+            val durationColumn = cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION)
+            val sizeColumn = cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.SIZE)
+            val artistColumn = cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST)
 
             while (cursor.moveToNext()) {
                 val id = cursor.getLong(idColumn)
